@@ -2,7 +2,6 @@
 
 # 			GROUP 18
 
-#NAME			student_NO		REGISTRATION_NO		E-MAIL
 
 #MABIRIZI KIZZA AHMED	216000099		16/U/553		mabiriziad@gmail.com
 
