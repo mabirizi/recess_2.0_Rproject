@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shiny - fluidPage</title>
+  <meta property="st:title" content="fluidPage">
+  <link rel="shortcut icon" href="https://shiny.rstudio.com/images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="Shiny%20-%20fluidPage_files/bootstrap.css">
+  <script type="text/javascript" async="" src="Shiny%20-%20fluidPage_files/BizibleAcct.js"></script><script type="text/javascript" async="" src="Shiny%20-%20fluidPage_files/linkid.js"></script><script async="" src="Shiny%20-%20fluidPage_files/analytics.js"></script><script src="Shiny%20-%20fluidPage_files/highlight.js"></script>
+  <script src="Shiny%20-%20fluidPage_files/jquery-1.js"></script>
+  <script src="Shiny%20-%20fluidPage_files/bootstrap.js"></script>
+  <link href="Shiny%20-%20fluidPage_files/css.css" rel="stylesheet" type="text/css">
+  <link href="Shiny%20-%20fluidPage_files/css_002.css" rel="stylesheet" type="text/css">
+  <link href="Shiny%20-%20fluidPage_files/font-awesome.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="Shiny%20-%20fluidPage_files/global.css">
+  <script src="Shiny%20-%20fluidPage_files/respond.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-20375833-9', 'rstudio.com');
+    ga('require', 'linkid', 'linkid.js');
+    ga('send', 'pageview');
+  </script>
+<script type="text/javascript" src="Shiny%20-%20fluidPage_files/bizible.js" async=""></script>
+<link rel="stylesheet" type="text/css" href="Shiny%20-%20fluidPage_files/rstudio.css">
+<link rel="stylesheet" type="text/css" href="Shiny%20-%20fluidPage_files/shiny-site.css">
+<script src="Shiny%20-%20fluidPage_files/highlight_002.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <script>
+
+$(document).ready(function() {
+
+  $('#menuToggler').on('click', function(event) {
+    if ($('#menuItems').hasClass('showMenu')) {
+      $('#menuItems').removeClass("showMenu");
+    }
+    else {
+      $('#menuItems').addClass("showMenu");
+    }
+  });
+
+});
+
+</script>
+
+
+<div id="app" class="shrinkHeader alwaysShrinkHeader">
+  <div id="main">
+    <!-- rstudio header -->
+    <div id="rStudioHeader">
+      <div class="band">
+        <div class="innards bandContent">
+          <div>
+            <a class="productName" href="https://shiny.rstudio.com/">Shiny</a>
+            <div class="rStudio"><span>from </span> <a href="https://www.rstudio.com/"><div class="rStudioLogo"></div></a></div>
+          </div>
+          <div id="menu">
+            <div id="menuToggler"></div>
+            <div id="menuItems" class="">
+              <a class="menuItem" href="https://shiny.rstudio.com/tutorial/">Get Started</a>
+              <a class="menuItem" href="https://shiny.rstudio.com/gallery/">Gallery</a>
+              <a class="menuItem" href="https://shiny.rstudio.com/articles/">Articles</a>
+              <a class="menuItem current" href="https://shiny.rstudio.com/reference/shiny/">Reference</a>
+              <a class="menuItem" href="https://shiny.rstudio.com/deploy/">Deploy</a>
+              <a class="menuItem" href="https://shiny.rstudio.com/help/">Help</a>
+              <a class="menuItem" href="https://shiny.rstudio.com/contribute/">Contribute</a>
+              <a class="menuItem gitHub" href="https://github.com/rstudio/shiny"></a>
+              <a class="menuItem gitHubText" href="https://github.com/rstudio/shiny">Source on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- page -->
+<div class="band mainContent pushFooter">
+  <div class="bandContent">
+
+    <div class="container">
+    <div class="constrain-image-width">
+  <link rel="stylesheet" type="text/css" href="Shiny%20-%20fluidPage_files/reference.css">
+<div class="reference" data-swiftype-index="true">
+<h1>Create a page with fluid layout</h1>
+
+<pre class="code"><code class="r"><span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/fluidPage.html"><span class="identifier"><span class="identifier">fluidPage</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="symbol"><span class="keyword"><span class="keyword">...</span></span></span><span class="keyword">,</span> <span class="argument"><span class="identifier"><span class="identifier">title</span></span></span>&nbsp;<span class="argument"><span class="operator"><span class="operator">=</span></span></span>&nbsp;<span class="literal"><span class="literal">NULL</span></span><span class="keyword">,</span> <span class="argument"><span class="identifier"><span class="identifier">responsive</span></span></span>&nbsp;<span class="argument"><span class="operator"><span class="operator">=</span></span></span>&nbsp;<span class="literal"><span class="literal">NULL</span></span><span class="keyword">,</span> <span class="argument"><span class="identifier"><span class="identifier">theme</span></span></span>&nbsp;<span class="argument"><span class="operator"><span class="operator">=</span></span></span>&nbsp;<span class="literal"><span class="literal">NULL</span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+
+<span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/fluidPage.html"><span class="identifier"><span class="identifier">fluidRow</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="symbol"><span class="keyword"><span class="keyword">...</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span></code></pre>
+
+<h3 data-swiftype-index="false">Arguments</h3>
+<table class="arguments">
+  <tbody><tr>
+    <th>...</th>
+    <td>Elements to include within the page</td>
+  </tr>
+  <tr>
+    <th>title</th>
+    <td>The browser window title (defaults to the host URL of the page).
+Can also be set as a side effect of the <code><a href="https://shiny.rstudio.com/reference/shiny/latest/titlePanel.html">titlePanel</a></code> function.</td>
+  </tr>
+  <tr>
+    <th>responsive</th>
+    <td>This option is deprecated; it is no longer optional with
+Bootstrap 3.</td>
+  </tr>
+  <tr>
+    <th>theme</th>
+    <td>Alternative Bootstrap stylesheet (normally a css file within the
+www directory). For example, to use the theme located at
+<code>www/bootstrap.css</code> you would use <code>theme = "bootstrap.css"</code>.</td>
+  </tr>
+</tbody></table>
+
+<div data-section="Value">
+  <h3 data-swiftype-index="false">Value</h3>
+
+  <p></p><dl>
+A UI defintion that can be passed to the <a href="https://shiny.rstudio.com/reference/shiny/latest/shinyUI.html">shinyUI</a> function.
+</dl><p></p>
+
+</div>
+
+<div data-section="Description">
+  <h3 data-swiftype-index="false">Description</h3>
+
+  <p>Functions for creating fluid page layouts. A fluid page layout consists of
+rows which in turn include columns. Rows exist for the purpose of making sure
+their elements appear on the same line (if the browser has adequate width).
+Columns exist for the purpose of defining how much horizontal space within a
+12-unit wide grid it's elements should occupy. Fluid pages scale their
+components in realtime to fill all available browser width.</p>
+
+</div>
+
+<div data-section="Details">
+  <h3 data-swiftype-index="false">Details</h3>
+
+  <p>To create a fluid page use the <code>fluidPage</code> function and include
+  instances of <code>fluidRow</code> and <code><a href="https://shiny.rstudio.com/reference/shiny/latest/column.html">column</a></code> within it. As an
+  alternative to low-level row and column functions you can also use
+  higher-level layout functions like <code><a href="https://shiny.rstudio.com/reference/shiny/latest/sidebarLayout.html">sidebarLayout</a></code>.</p>
+
+</div>
+
+<div data-section="Note">
+  <h3 data-swiftype-index="false">Note</h3>
+
+  <p>See the <a href="http://shiny.rstudio.com/articles/layout-guide.html">
+  Shiny-Application-Layout-Guide</a> for additional details on laying out fluid
+  pages.</p>
+
+</div>
+
+<h3 id="examples" data-swiftype-index="false">Examples</h3>
+<pre class="examples"><code class="r"><div class="input"><span class="comment"><span class="comment"><span class="comment">## Only run examples in interactive R sessions</span></span></span>
+<span class="keyword"><span class="keyword"><span class="keyword">if</span></span></span> <span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="functioncall"><a href="http://www.rdocumentation.org/packages/base/topics/interactive"><span class="identifier"><span class="identifier">interactive</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span> <span class="keyword"><span class="paren"><span class="paren">{</span></span></span>
+
+<span class="comment"><span class="comment"><span class="comment"># Example of UI with fluidPage</span></span></span>
+<span class="symbol"><span class="identifier"><span class="identifier">ui</span></span></span> <span class="assignement"><span class="operator"><span class="operator">&lt;-</span></span></span> <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/fluidPage.html"><span class="identifier"><span class="identifier">fluidPage</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span>
+
+  <span class="comment"><span class="comment"><span class="comment"># Application title</span></span></span>
+  <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/titlePanel.html"><span class="identifier"><span class="identifier">titlePanel</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="string"><span class="string"><span class="string">"Hello Shiny!"</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span><span class="keyword">,</span>
+
+  <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/sidebarLayout.html"><span class="identifier"><span class="identifier">sidebarLayout</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span>
+
+    <span class="comment"><span class="comment"><span class="comment"># Sidebar with a slider input</span></span></span>
+    <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/sidebarPanel.html"><span class="identifier"><span class="identifier">sidebarPanel</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span>
+      <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/sliderInput.html"><span class="identifier"><span class="identifier">sliderInput</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="string"><span class="string"><span class="string">"obs"</span></span></span><span class="keyword">,</span>
+                  <span class="string"><span class="string"><span class="string">"Number of observations:"</span></span></span><span class="keyword">,</span>
+                  <span class="argument"><span class="identifier"><span class="identifier">min</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="number"><span class="number"><span class="number">0</span></span></span><span class="keyword">,</span>
+                  <span class="argument"><span class="identifier"><span class="identifier">max</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="number"><span class="number"><span class="number">1000</span></span></span><span class="keyword">,</span>
+                  <span class="argument"><span class="identifier"><span class="identifier">value</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="number"><span class="number"><span class="number">500</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+    <span class="keyword"><span class="paren"><span class="paren">)</span></span></span><span class="keyword">,</span>
+
+    <span class="comment"><span class="comment"><span class="comment"># Show a plot of the generated distribution</span></span></span>
+    <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/mainPanel.html"><span class="identifier"><span class="identifier">mainPanel</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span>
+      <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/plotOutput.html"><span class="identifier"><span class="identifier">plotOutput</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="string"><span class="string"><span class="string">"distPlot"</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+    <span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+  <span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+<span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+
+<span class="comment"><span class="comment"><span class="comment"># Server logic</span></span></span>
+<span class="symbol"><span class="identifier"><span class="identifier">server</span></span></span> <span class="assignement"><span class="operator"><span class="operator">&lt;-</span></span></span> <span class="keyword"><span class="keyword"><span class="keyword">function</span></span></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="formalargs"><span class="identifier"><span class="identifier">input</span></span></span><span class="keyword">,</span> <span class="formalargs"><span class="identifier"><span class="identifier">output</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span> <span class="keyword"><span class="paren"><span class="paren">{</span></span></span>
+  <span class="symbol"><span class="identifier"><span class="identifier">output</span></span></span><span class="keyword"><span class="operator"><span class="operator">$</span></span></span><span class="symbol"><span class="identifier"><span class="identifier">distPlot</span></span></span> <span class="assignement"><span class="operator"><span class="operator">&lt;-</span></span></span> <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPlot.html"><span class="identifier"><span class="identifier">renderPlot</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="keyword"><span class="paren"><span class="paren">{</span></span></span>
+    <span class="functioncall"><a href="http://www.rdocumentation.org/packages/graphics/topics/hist"><span class="identifier"><span class="identifier">hist</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="functioncall"><a href="http://www.rdocumentation.org/packages/stats/topics/Normal"><span class="identifier"><span class="identifier">rnorm</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="symbol"><span class="identifier"><span class="identifier">input</span></span></span><span class="keyword"><span class="operator"><span class="operator">$</span></span></span><span class="symbol"><span class="identifier"><span class="identifier">obs</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+  <span class="keyword"><span class="paren"><span class="paren">}</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+<span class="keyword"><span class="paren"><span class="paren">}</span></span></span>
+
+<span class="comment"><span class="comment"><span class="comment"># Complete app with UI and server components</span></span></span>
+<span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html"><span class="identifier"><span class="identifier">shinyApp</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="symbol"><span class="identifier"><span class="identifier">ui</span></span></span><span class="keyword">,</span> <span class="symbol"><span class="identifier"><span class="identifier">server</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+
+
+<span class="comment"><span class="comment"><span class="comment"># UI demonstrating column layouts</span></span></span>
+<span class="symbol"><span class="identifier"><span class="identifier">ui</span></span></span> <span class="assignement"><span class="operator"><span class="operator">&lt;-</span></span></span> <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/fluidPage.html"><span class="identifier"><span class="identifier">fluidPage</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span>
+  <span class="argument"><span class="identifier"><span class="identifier">title</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="string"><span class="string"><span class="string">"Hello Shiny!"</span></span></span><span class="keyword">,</span>
+  <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/fluidPage.html"><span class="identifier"><span class="identifier">fluidRow</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span>
+    <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/column.html"><span class="identifier"><span class="identifier">column</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="argument"><span class="identifier"><span class="identifier">width</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="number"><span class="number"><span class="number">4</span></span></span><span class="keyword">,</span>
+      <span class="string"><span class="string"><span class="string">"4"</span></span></span>
+    <span class="keyword"><span class="paren"><span class="paren">)</span></span></span><span class="keyword">,</span>
+    <span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/column.html"><span class="identifier"><span class="identifier">column</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="argument"><span class="identifier"><span class="identifier">width</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="number"><span class="number"><span class="number">3</span></span></span><span class="keyword">,</span> <span class="argument"><span class="identifier"><span class="identifier">offset</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="number"><span class="number"><span class="number">2</span></span></span><span class="keyword">,</span>
+      <span class="string"><span class="string"><span class="string">"3 offset 2"</span></span></span>
+    <span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+  <span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+<span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+
+<span class="functioncall"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html"><span class="identifier"><span class="identifier">shinyApp</span></span></a></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="symbol"><span class="identifier"><span class="identifier">ui</span></span></span><span class="keyword">,</span> <span class="argument"><span class="identifier"><span class="identifier">server</span></span></span> <span class="argument"><span class="operator"><span class="operator">=</span></span></span> <span class="keyword"><span class="keyword"><span class="keyword">function</span></span></span><span class="keyword"><span class="paren"><span class="paren">(</span></span></span><span class="formalargs"><span class="identifier"><span class="identifier">input</span></span></span><span class="keyword">,</span> <span class="formalargs"><span class="identifier"><span class="identifier">output</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span> <span class="keyword"><span class="paren"><span class="paren">{</span></span></span> <span class="keyword"><span class="paren"><span class="paren">}</span></span></span><span class="keyword"><span class="paren"><span class="paren">)</span></span></span>
+<span class="keyword"><span class="paren"><span class="paren">}</span></span></span></div></code></pre>
+<!-- <ul>
+  <li>fluidPage</li><li>fluidRow</li>
+</ul>
+<ul>
+  
+</ul> -->
+
+<div data-swiftype-index="false">
+<h3>See also</h3>
+  <p><code><a href="https://shiny.rstudio.com/reference/shiny/latest/column.html">column</a></code>, <code><a href="https://shiny.rstudio.com/reference/shiny/latest/sidebarLayout.html">sidebarLayout</a></code></p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+    
+  </div>  <!-- band -->
+</div> <!-- bandContent -->
+
+
+
+    <!-- rstudio footer -->
+    <div id="rStudioFooter" class="band">
+      <div class="bandContent">
+        <div id="copyright">© Copyright 2017 RStudio Inc.</div>
+        <div id="logos">
+          <a href="https://twitter.com/rstudio" class="footerLogo twitter"></a>
+          <a href="https://github.com/rstudio" class="footerLogo gitHub"></a>
+          <a href="https://www.linkedin.com/company/rstudio-inc" class="footerLogo linkedIn"></a>
+          <a href="https://www.facebook.com/pages/RStudio-Inc/267733656584415" class="footerLogo facebook"></a>
+        </div>
+      </div>
+    </div>
+
+  </div>  <!-- main -->
+</div>  <!-- app -->
+
+
+
+<img style="display: none;" src="Shiny%20-%20fluidPage_files/ipv.gif"><img style="display: none;" src="Shiny%20-%20fluidPage_files/ipv_002.gif"></body></html>
